@@ -1,0 +1,834 @@
+=if([#"VIM - Scan Date"] = null) 
+then "Service Provider"
+
+////The next 3 lines were removed per Chad Idzior on 12/5/2016
+////ELSEIF ([To Actor] = "INFO_PROVIDER"
+////or [Priority Input] = 1)
+/////THEN "Dow"
+
+else if( [Geo Business Area] = "ASIA PACIFIC" and 
+//PRM
+([Company Code Group] = "BlueCube" or 
+[Company Code Group] = "Trinseo" or
+[Company Code Group] = "MEG" or
+[Company Code Group] = "AgroFresh")
+and
+[c.Scan Date ELSE Posting Date] > Date.FromText("5/31/2016")
+
+or
+
+[Geo Business Area] = "ASIA PACIFIC" and 
+//PRD
+([Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas")
+and
+[c.Scan Date ELSE Posting Date] > Date.FromText("5/31/2016") and 
+([Company Code] = 4073 or [Company Code] = 1086 or  
+[Company Code] = 1320 or [Company Code] = 4002 or
+[Company Code] = 4029 or [Company Code] = 1422 or 
+[Company Code] = 4046 or [Company Code] = 4086 or  
+[Company Code] = 348 or [Company Code] = 1388 or
+[Company Code] = 1439 or [Company Code] = 2114 or 
+[Company Code] = 4078 or [Company Code] = 221 or  
+[Company Code] = 4048 or [Company Code] = 4011 or
+[Company Code] = 231) 
+
+or
+
+[Geo Business Area] = "ASIA PACIFIC" and 
+//PRD
+([Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas")
+and
+[c.Scan Date ELSE Posting Date] > Date.FromText("6/7/2016") and 
+([Company Code] = 209 or [Company Code] = 4052 or  
+[Company Code] = 4280 or [Company Code] = 205 or
+[Company Code] = 349 or [Company Code] = 923 or 
+[Company Code] = 1417 or [Company Code] = 2054 or  
+[Company Code] = 4080 or [Company Code] = 4265 or
+[Company Code] = 1358 or [Company Code] = 4088 or 
+[Company Code] = 208 or [Company Code] = 4034 or  
+[Company Code] = 4071 or [Company Code] = 2116 or
+[Company Code] = 4010 or [Company Code] = 4042 or 
+[Company Code] = 216 or [Company Code] = 207 or  
+[Company Code] = 233 or [Company Code] = 924 or
+[Company Code] = 2111 or [Company Code] = 4047 or 
+[Company Code] = 201 or [Company Code] = 212 or  
+[Company Code] = 4044 or [Company Code] = 4072 or
+[Company Code] = 4274)
+
+or
+
+[Geo Business Area] = "ASIA PACIFIC" and 
+//PRD
+([Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas")
+and
+[c.Scan Date ELSE Posting Date] > Date.FromText("6/14/2016") and 
+([Company Code] = 21 or [Company Code] = 844 or  
+[Company Code] = 4081 or [Company Code] = 4278 or
+[Company Code] = 903 or [Company Code] = 22 or 
+[Company Code] = 4036 or [Company Code] = 787 or  
+[Company Code] = 4272 or [Company Code] = 237 or
+[Company Code] = 2115 or [Company Code] = 4031 or 
+[Company Code] = 4051 or [Company Code] = 4005)
+
+or
+
+[Geo Business Area] = "ASIA PACIFIC" and 
+//PRD
+([Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas")
+and
+[c.Scan Date ELSE Posting Date] > Date.FromText("6/21/2016") and 
+([Company Code] = 4016 or [Company Code] = 4037 or  
+[Company Code] = 225 or [Company Code] = 199 or
+[Company Code] = 943 or [Company Code] = 952 or 
+[Company Code] = 1322 or [Company Code] = 1377 or  
+[Company Code] = 1378 or [Company Code] = 1418 or
+[Company Code] = 1419 or [Company Code] = 1420 or 
+[Company Code] = 1424 or [Company Code] = 2051 or  
+[Company Code] = 2113 or [Company Code] = 4035 or
+[Company Code] = 4041 or [Company Code] = 4053 or 
+[Company Code] = 4054 or [Company Code] = 4103 or  
+[Company Code] = 4281 or [Company Code] = 8444 or
+[Company Code] = 38 or [Company Code] = 4087 or 
+[Company Code] = 4089 or [Company Code] = 195 or  
+[Company Code] = 359 or [Company Code] = 4032)
+
+or
+///TO ASSIGN MISSING COMPANY CODES///
+[Geo Business Area] = "ASIA PACIFIC" and [c.Scan Date ELSE Posting Date]> Date.FromText("6/30/2016")
+or
+
+// North America ///////////////////////////////////////////////////////////////////////////////
+[Geo Business Area] = "North America" and 
+//PRD
+([Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas")
+and
+[c.Scan Date ELSE Posting Date] >= Date.FromText("7/1/2016") and 
+([Company Code] = 4004 or [Company Code] = 4009 or  
+[Company Code] = 0002 or [Company Code] = 0014 or
+[Company Code] = 0023 or [Company Code] = 2000)
+
+or
+
+[Geo Business Area] = "North America" and 
+//PRD
+([Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas")
+and
+[c.Scan Date ELSE Posting Date] >= Date.FromText("7/11/2016") and 
+([Company Code] = 0016 or [Company Code] = 1004 or  
+[Company Code] = 1015 or [Company Code] = 1283 or
+[Company Code] = 1283 or [Company Code] = 2000 or
+[Company Code] = 2002 or [Company Code] = 2015 or
+[Company Code] = 2029 or [Company Code] = 4007 or
+[Company Code] = 4008 or [Company Code] = 4017 or
+[Company Code] = 0012 or [Company Code] = 0105 or
+[Company Code] = 0106 or [Company Code] = 0107 or
+[Company Code] = 0108 or [Company Code] = 0110 or
+[Company Code] = 0115 or [Company Code] = 0149 or
+[Company Code] =	0184	or
+[Company Code] =	0186	or
+[Company Code] =	0193	or
+[Company Code] =	0298	or
+[Company Code] =	0301	or
+[Company Code] =	0309	or
+[Company Code] =	0313	or
+[Company Code] =	0316	or
+[Company Code] =	0588	or
+[Company Code] =	0610	or
+[Company Code] =	0792	or
+[Company Code] =	0874	or
+[Company Code] =	0911	or
+[Company Code] =	0930	or
+[Company Code] =	0931	or
+[Company Code] =	0960	or
+[Company Code] =	0962	or
+[Company Code] =	1001	or
+[Company Code] =	1004	or
+[Company Code] =	1017	or
+[Company Code] =	1024	or
+[Company Code] =	1050	or
+[Company Code] =	1283	or
+[Company Code] =	1325	or
+[Company Code] =	1367	or
+[Company Code] =	1368	or
+[Company Code] =	1386	or
+[Company Code] =	2002	or
+[Company Code] =	2010	or
+[Company Code] =	2014	or
+[Company Code] =	2015	or
+[Company Code] =	2016	or
+[Company Code] =	2028	or
+[Company Code] =	2029	or
+[Company Code] =	2031	or
+[Company Code] =	2034	or
+[Company Code] =	2035	or
+[Company Code] =	2037	or
+[Company Code] =	2120	or
+[Company Code] =	4004	or
+[Company Code] =	4007	or
+[Company Code] =	4008	or
+[Company Code] =	4009	or
+[Company Code] =	4017	or
+[Company Code] =	4050	or
+[Company Code] =	4115	or
+[Company Code] = 4049 or [Company Code] = 4050)
+
+or
+[Geo Business Area] = "North America" and 
+//PRM
+([Company Code Group] = "BlueCube" or 
+[Company Code Group] = "Trinseo" or
+[Company Code Group] = "MEG" or
+[Company Code Group] = "AgroFresh")
+and
+[c.Scan Date ELSE Posting Date] >= Date.FromText("7/11/2016") and 
+([Company Code] =	1172	or
+[Company Code] =	1173	or
+[Company Code] =	2078	or
+[Company Code] =	5300	or
+[Company Code] =	5315	or
+[Company Code] =	5405	or
+[Company Code] =	5402	or
+[Company Code] =	5444	or
+[Company Code] =	5401)
+
+or
+[Geo Business Area] = "North America" and 
+//PRO
+([Company Code Group] = "Trinseo")
+and
+[c.Scan Date ELSE Posting Date] >= Date.FromText("7/11/2016") and 
+([Company Code] = 5001)
+
+or
+
+[Geo Business Area] = "North America" and 
+//PRD
+([Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas")
+and
+[c.Scan Date ELSE Posting Date] >= Date.FromText("7/18/2016") and 
+([Company Code] = 1015 or [Company Code] = 0001)  
+
+or
+
+[Geo Business Area] = "North America" and 
+//PRM
+([Company Code Group] = "BlueCube" or 
+[Company Code Group] = "Trinseo" or
+[Company Code Group] = "MEG" or
+[Company Code Group] = "AgroFresh")
+and
+[c.Scan Date ELSE Posting Date] >= Date.FromText("7/18/2016") and 
+([Company Code] =	5405	or
+[Company Code] =	5408	or
+[Company Code] =	5437	or
+[Company Code] =	5438)  
+
+or
+
+[Geo Business Area] = "North America" and 
+//PRD
+([Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas")
+and
+[c.Scan Date ELSE Posting Date] >= Date.FromText("7/25/2016") and 
+([Company Code] = 0001)  
+
+or
+
+[Geo Business Area] = "North America" and 
+//PRM
+([Company Code Group] = "BlueCube" or 
+[Company Code Group] = "Trinseo" or
+[Company Code Group] = "MEG" or
+[Company Code Group] = "AgroFresh")
+and
+[c.Scan Date ELSE Posting Date] >= Date.FromText("7/25/2016") and 
+([Company Code] =	5216	or
+[Company Code] =	5217	or
+[Company Code] =	5218)  
+or
+///TO ASSIGN MISSING COMPANY CODES///
+[Geo Business Area] = "North America" and [c.Scan Date ELSE Posting Date]> Date.FromText("7/31/2016")
+or
+
+
+////////Latin America//////////////////////////////////////////////////
+
+
+//PRD
+[Geo Business Area] = "Latin America" and 
+
+(
+[Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas"
+) and
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("8/1/2016") and 
+
+(
+[Company Code] = 833 or
+[Company Code] = 4083 or
+[Company Code] = 588 or
+[Company Code] = 888 or
+[Company Code] = 4157 or
+[Company Code] = 191 or
+[Company Code] = 838 or
+[Company Code] = 839 or
+[Company Code] = 840 or
+[Company Code] = 898 or
+[Company Code] = 899 or
+[Company Code] = 900 or
+[Company Code] = 941 or
+[Company Code] = 1201 or
+[Company Code] = 1246 or
+[Company Code] = 4025 or
+[Company Code] = 179 or
+[Company Code] = 866 or
+[Company Code] = 4028
+)
+
+or
+
+//PRD
+[Geo Business Area] = "Latin America" and 
+
+(
+[Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas"
+) and
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("8/8/2016") and 
+
+(
+[Company Code] = 938 or
+[Company Code] = 942 or
+[Company Code] = 889 or
+[Company Code] = 166
+)
+
+or
+
+//PRM
+[Geo Business Area] = "Latin America" and 
+
+(
+[Company Code Group] = "BlueCube" or 
+[Company Code Group] = "MEG" or 
+[Company Code Group] = "Trinseo" or 
+[Company Code Group] = "Agrofresh" 
+) and 
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("8/8/2016") and 
+
+(
+[Company Code] = 1375 or
+[Company Code] = 1181 or
+[Company Code] = 5309 or
+[Company Code] = 5303 or
+[Company Code] = 5406 or
+[Company Code] = 5407 or
+[Company Code] = 5409 or
+[Company Code] = 5410 or
+[Company Code] = 5441 or
+[Company Code] = 5446
+)
+
+or
+
+//PRO
+[Geo Business Area] = "North America" and 
+
+[Company Code Group] = "Trinseo" and 
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("8/8/2016") and 
+
+[Company Code] = 5025
+
+or
+
+//PRD
+
+[Geo Business Area] = "Latin America" and 
+
+(
+[Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas"
+) and
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("8/15/2016") and 
+
+(
+[Company Code] = 1253 or
+[Company Code] = 4026 or
+[Company Code] = 803
+)
+
+or
+
+//PRM
+[Geo Business Area] = "Latin America" and 
+
+(
+[Company Code Group] = "BlueCube" or 
+[Company Code Group] = "MEG" or 
+[Company Code Group] = "Trinseo" or 
+[Company Code Group] = "Agrofresh"
+) and 
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("8/15/2016") and 
+
+(
+[Company Code] = 5302 or
+[Company Code] = 5403
+)
+
+or
+
+//PRO
+[Geo Business Area] = "North America" and 
+
+[Company Code Group] = "Trinseo" and 
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("8/15/2016") and 
+
+[Company Code] = 5042
+
+
+or
+
+//PRD
+
+[Geo Business Area] = "Latin America" and 
+
+(
+[Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas"
+) and
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("8/22/2016") and 
+(
+[Company Code] = 184 or
+[Company Code] = 960 or
+[Company Code] = 4027
+)
+
+
+or
+///TO ASSIGN MISSING COMPANY CODES///
+[Geo Business Area] = "Latin America" and [c.Scan Date ELSE Posting Date]> Date.FromText("8/31/2016")
+or
+
+//////EMEAI/////////////////////////////////////////////////////
+
+//PRD
+
+[Geo Business Area] = "EUROPE/MIDDLE EAST/AFRICA/INDIA" and 
+
+(
+[Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas"
+) and
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("9/01/2016") and 
+(
+[Company Code] = 5 or
+[Company Code] = 8 or
+[Company Code] = 149 or
+[Company Code] = 948 or
+[Company Code] = 1080 or
+[Company Code] = 4006
+)
+
+or
+
+//PRM
+[Geo Business Area] = "EUROPE/MIDDLE EAST/AFRICA/INDIA" and 
+
+(
+[Company Code Group] = "BlueCube" or 
+[Company Code Group] = "MEG" or 
+[Company Code Group] = "Trinseo" or 
+[Company Code Group] = "Agrofresh"
+) and 
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("9/01/2016") and 
+
+(
+[Company Code] = 5308 or
+[Company Code] = 5415 or
+[Company Code] = 1176
+)
+
+or
+
+//PRD
+
+[Geo Business Area] = "EUROPE/MIDDLE EAST/AFRICA/INDIA" and 
+
+(
+[Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas"
+) and
+
+[c.Scan Date ELSE Posting Date] >=Date.FromText("9/12/2016") and 
+(
+[Company Code] = 1097
+)
+
+
+or
+
+//PRD
+
+[Geo Business Area] = "EUROPE/MIDDLE EAST/AFRICA/INDIA" and 
+
+(
+[Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas"
+) and
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("9/19/2016") and 
+(
+[Company Code] = 4 or
+[Company Code] = 9 or
+[Company Code] = 15
+)
+
+
+or
+
+//PRM
+[Geo Business Area] = "EUROPE/MIDDLE EAST/AFRICA/INDIA" and 
+
+(
+[Company Code Group] = "BlueCube" or 
+[Company Code Group] = "MEG" or 
+[Company Code Group] = "Trinseo" or 
+[Company Code Group] = "Agrofresh"
+) and 
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("9/19/2016") and 
+
+(
+[Company Code] = 1214 or
+[Company Code] = 5428
+)
+
+or
+
+//PRO
+[Geo Business Area] = "EUROPE/MIDDLE EAST/AFRICA/INDIA" and 
+
+[Company Code Group] = "Trinseo" and 
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("9/19/2016") and 
+
+(
+[Company Code] = 5029
+)
+
+
+or
+
+
+//PRD
+
+[Geo Business Area] = "EUROPE/MIDDLE EAST/AFRICA/INDIA" and 
+
+(
+[Company Code Group] = "BERHC" or 
+[Company Code Group] = "DOW NON CONSOLIDATED" or 
+[Company Code Group] = "DOW Tenant T001" or 
+[Company Code Group] = "NittaHaas" or 
+[Company Code Group] = "SCG-Dow" or 
+[Company Code Group] = "SERHC" or 
+[Company Code Group] = "Not Assigned" or
+[Company Code Group] = "SKC-Haas"
+) and
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("9/26/2016") and 
+(
+[Company Code] = 3 or
+[Company Code] = 6 or
+[Company Code] = 18 or
+[Company Code] = 24 or
+[Company Code] = 25 or
+[Company Code] = 27 or
+[Company Code] = 28 or
+[Company Code] = 29 or
+[Company Code] = 124 or
+[Company Code] = 126 or
+[Company Code] = 127 or
+[Company Code] = 129 or
+[Company Code] = 130 or
+[Company Code] = 132 or
+[Company Code] = 138 or
+[Company Code] = 148 or
+[Company Code] = 151 or
+[Company Code] = 154 or
+[Company Code] = 155 or
+[Company Code] = 160 or
+[Company Code] = 336 or
+[Company Code] = 597 or
+[Company Code] = 728 or
+[Company Code] = 744 or
+[Company Code] = 775 or
+[Company Code] = 877 or
+[Company Code] = 895 or
+[Company Code] = 896 or
+[Company Code] = 932 or
+[Company Code] = 991 or
+[Company Code] = 1033 or
+[Company Code] = 1034 or
+[Company Code] = 1041 or
+[Company Code] = 1048 or
+[Company Code] = 1051 or
+[Company Code] = 1056 or
+[Company Code] = 1074 or
+[Company Code] = 1138 or
+[Company Code] = 1157 or
+[Company Code] = 1198 or
+[Company Code] = 1213 or
+[Company Code] = 1239 or
+[Company Code] = 1251 or
+[Company Code] = 1252 or
+[Company Code] = 1267 or
+[Company Code] = 1278 or
+[Company Code] = 1299 or
+[Company Code] = 1326 or
+[Company Code] = 1327 or
+[Company Code] = 1329 or
+[Company Code] = 1330 or
+[Company Code] = 1333 or
+[Company Code] = 1341 or
+[Company Code] = 1379 or
+[Company Code] = 1380 or
+[Company Code] = 1391 or
+[Company Code] = 1392 or
+[Company Code] = 2119 or
+[Company Code] = 4001 or
+[Company Code] = 4003 or
+[Company Code] = 4012 or
+[Company Code] = 4013 or
+[Company Code] = 4018 or
+[Company Code] = 4020 or
+[Company Code] = 4021 or
+[Company Code] = 4022 or
+[Company Code] = 4023 or
+[Company Code] = 4024 or
+[Company Code] = 4055 or
+[Company Code] = 4056 or
+[Company Code] = 4057 or
+[Company Code] = 4058 or
+[Company Code] = 4059 or
+[Company Code] = 4060 or
+[Company Code] = 4061 or
+[Company Code] = 4062 or
+[Company Code] = 4063 or
+[Company Code] = 4064 or
+[Company Code] = 4065 or
+[Company Code] = 4066 or
+[Company Code] = 4067 or
+[Company Code] = 4068 or
+[Company Code] = 4069 or
+[Company Code] = 4070 or
+[Company Code] = 4075 or
+[Company Code] = 4082 or
+[Company Code] = 4165 or
+[Company Code] = 4183 or
+[Company Code] = 4194 or
+[Company Code] = 4196 or
+[Company Code] = 921 or
+[Company Code] = 751
+)
+
+or
+
+//PRM
+[Geo Business Area] = "EUROPE/MIDDLE EAST/AFRICA/INDIA" and 
+
+(
+[Company Code Group] = "BlueCube" or 
+[Company Code Group] = "MEG" or 
+[Company Code Group] = "Trinseo" or 
+[Company Code Group] = "Agrofresh"
+) and 
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("9/26/2016") and 
+
+(
+[Company Code] = 5305 or
+[Company Code] = 5310 or
+[Company Code] = 5311 or
+[Company Code] = 5313 or
+[Company Code] = 5314 or
+[Company Code] = 5318 or
+[Company Code] = 5319 or
+[Company Code] = 5320 or
+[Company Code] = 5414 or
+[Company Code] = 5416 or
+[Company Code] = 5417 or
+[Company Code] = 5418 or
+[Company Code] = 5419 or
+[Company Code] = 5421 or
+[Company Code] = 5422 or
+[Company Code] = 5423 or
+[Company Code] = 5424 or
+[Company Code] = 5425 or
+[Company Code] = 5434 or
+[Company Code] = 5435 or
+[Company Code] = 5436 or
+[Company Code] = 5449 or
+[Company Code] = 1177 or
+[Company Code] = 1179 or
+[Company Code] = 1180
+)
+
+or
+
+//PRO
+[Geo Business Area] = "EUROPE/MIDDLE EAST/AFRICA/INDIA" and 
+
+[Company Code Group] = "Trinseo" and 
+
+[c.Scan Date ELSE Posting Date] >= Date.FromText("11/02/2016") and 
+
+(
+[Company Code] = 5002 or
+[Company Code] = 5003 or
+[Company Code] = 5004 or
+[Company Code] = 5005 or
+[Company Code] = 5007 or
+[Company Code] = 5009 or
+[Company Code] = 5015 or
+[Company Code] = 5016 or
+[Company Code] = 5017 or
+[Company Code] = 5018 or
+[Company Code] = 5019 or
+[Company Code] = 5021 or
+[Company Code] = 5022 or
+[Company Code] = 5023 or
+[Company Code] = 5024 or
+[Company Code] = 5036 or
+[Company Code] = 5039 or
+[Company Code] = 5044 or
+[Company Code] = 5045 or
+[Company Code] = 5049 or
+[Company Code] = 5050 or
+[Company Code] = 5053 or
+[Company Code] = 5056
+)
+or
+///TO ASSIGN MISSING COMPANY CODES///
+
+[Geo Business Area] = "EUROPE/MIDDLE EAST/AFRICA/INDIA" and [c.Scan Date ELSE Posting Date]> Date.FromText("9/30/2016")
+or
+[Geo Business Area] = "EUROPE & AFRICA" and [c.Scan Date ELSE Posting Date]> Date.FromText("9/30/2016")
+or
+[Geo Business Area] = "METIP" and [c.Scan Date ELSE Posting Date]> Date.FromText("9/30/2016")
+or
+[Geo Business Area] = "EUROPE/MIDDLE EAST/AFRICA" and [c.Scan Date ELSE Posting Date]> Date.FromText("9/30/2016")
+or
+[c.Scan Date ELSE Posting Date] > Date.FromText("9/30/2016"))
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+then "Service Provider"
+else "Dow"
